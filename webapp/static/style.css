@@ -1,0 +1,614 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+  width: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  background-color: #a89583;
+  text-align: center;
+/*   font-family: 'Poiret One', cursive; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-inside {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.header-column-logo {
+  width: max-content;
+  height: 20%;
+  display: block;
+  vertical-align: middle;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 30px;
+  margin-right: 10%;
+}
+
+.header-column {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+}
+
+.header-column-vide {
+  width: 60%;
+  height: 100%;
+  display: block;
+  vertical-align: middle;
+  margin: auto;
+  padding-left: 0;
+}
+
+.header-column-cart {
+  width: max-content;
+  height: 100%;
+  display: block;
+  vertical-align: middle;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10%;
+}
+
+.header-column-enter {
+  width: max-content;
+  height: 100%;
+  display: block;
+  vertical-align: middle;
+  margin: auto;
+  padding-left: 2%;
+  padding-right: 5%;
+}
+
+.header-wrapper {
+  width: max-content;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.header-menu {
+  margin: auto;
+  display: inline-block;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  vertical-align: middle;
+}
+
+.header-login {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  transition: 1s; 
+}
+
+.header-login:hover {
+  transform: scale(1.1);
+  font-weight: 900;
+}
+
+.header-chapter-name {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  transition: 1s; 
+  text-align: center;
+}
+
+.header-chapter-name:hover {
+  transform: scale(1.1);
+  font-weight: 900;
+}
+
+.header-icon-logo {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: middle;
+  padding-bottom: 5px;
+}
+
+.icon-logo {
+  width: 200px;
+  float: right;
+}
+
+.icon-menu {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align: middle;
+}
+
+.line {
+  border-bottom: 1px solid #a89583;
+}
+
+.footer {
+  width: 100%;
+  margin: 0;
+  padding-top: 30px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 60px;
+  color: #786554;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-inside {
+  width: 70%;
+  margin: auto;
+  display: inline-block;
+  text-align: left;
+}
+
+.footer-column {
+  width: 24%;
+  display: inline-block;
+  margin: auto;
+}
+
+.footer-wrapper {
+  width: max-content;
+  margin: auto;
+}
+
+.footer-menu {
+  margin: auto;
+  display: inline-block;
+  width: 100%;
+  color: #786554;
+  text-decoration: none;
+  list-style: none;
+  font-size: 12px;
+  vertical-align: top;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #786554;
+}
+
+.chapter-name {
+  font-size: 16px;
+  font-weight: 200; 
+  margin-bottom: 20px;
+  transition: 1s; 
+  text-align: left;
+}
+
+.chapter-name:hover {
+  transform: scale(1.1);
+}
+
+table {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+table, th, td {
+/*   border: 1px solid #c0c0c0; */
+  font-size: 16px;
+}
+
+td {
+  width: 25%;
+}
+
+.item {
+  text-align: center;
+}
+
+.item img {
+  width: 80%;
+  height: 300px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  object-fit: cover;
+  transition: 1s; 
+  text-align: center;
+}
+
+.item img:hover {
+  transform: scale(1.05);
+}
+
+.button-to-cart {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  border: 1px solid #a89583;
+  color: #a89583;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.button-to-cart:hover {
+  transition: 0.5s;
+  background-color: #a89583;
+  border: 1px solid #a89583;
+  color: white;
+}
+
+.categorie {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.categorie a {
+  text-decoration: none;
+  color: black;
+}
+
+.categorie-inside {
+  width: 80%;
+  margin: auto;
+  display: inline-block;
+  text-align: center;
+}
+
+.categorie-column {
+  width: 16%;
+  display: inline-block;
+  margin: auto;
+}
+
+.categorie-wrapper {
+  width: max-content;
+  margin: auto;
+}
+
+.categorie-menu {
+  margin: auto;
+  display: inline-block;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  list-style: none;
+  text-align: left;
+  font-size: 18px;
+  vertical-align: top;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.categorie-chapter-name {
+  font-weight: 200; 
+  margin-bottom: 15px;
+}
+
+.form-wrapper {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.form {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.username {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.email {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.password {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.submit {
+    padding-bottom: 20px;
+}
+
+.submit-button {
+    width: 200px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.password-field {
+    width: 200px;
+    height: 30px;
+    margin-top: 20px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.password-username {
+    width: 200px;
+    height: 30px;
+    margin-top: 20px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.about-company-wrapper {
+  display: flex;
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.about-company-inside {
+  width: 100%;
+  display: inline-block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: #786554;
+  margin: auto;
+  padding: 30px;
+}
+
+.about-company-text {
+  line-height: 1.8;
+  padding: 5px;
+}
+
+.partners-wrapper {
+  display: flex;
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.partners-inside {
+  width: 100%;
+  display: inline-block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: #786554;
+  margin: auto;
+  padding: 30px;
+}
+
+.partners-text {
+  line-height: 1.8;
+}
+
+.customers-wrapper {
+  display: flex;
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.customers-inside {
+  width: 100%;
+  display: inline-block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: #786554;
+  margin: auto;
+  padding: 30px;
+}
+
+.customer-text {
+  line-height: 1.8;
+}
+
+.price {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.flash-message {
+  text-align: center;
+  font-size: 16px;
+  color: red;
+}
+
+.background-main-page {
+  width: 100%;
+  min-height: 700px;
+  max-height: 700px;
+  background-image: url("images/background_main_page_02.jpg");
+  background-size: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  
+}
+
+.background-main-page-wrapper-text {
+  padding-left: 30%;
+  padding-top: 30%;
+}
+
+.background-main-page-text {
+  color: white;
+  background: rgb(120, 101, 84, 0.5);
+  text-align: left;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.cart-wrapper-main {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 20px;
+  border: 1px solid rgb(120, 101, 84, 0.5);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.product-in-cart {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-column {
+  display: inline-block;
+  width: 24%;
+  height: 70px;
+  line-height: 70px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.cart-column-product {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.button-in-cart-list {
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  border: 1px solid #a89583;
+  color: #a89583;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.button-in-cart-list:hover {
+  transition: 0.5s;
+  background-color: #a89583;
+  border: 1px solid #a89583;
+  color: white;
+}
+
+.product-img-in-cart {
+  display: block;
+  margin: 0 auto; 
+  max-height: 70px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  object-fit: cover;
+  transition: 1s; 
+}
+
+.cart-wrapper {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 20px;
+  border: 1px solid rgb(120, 101, 84, 0.5);
+  border-radius: 20px;
+}
+
+.cart-price {
+  width: 50%;
+  text-align: left;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.cart-price-total {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+
+.cart-delivery {
+  width: 50%;
+  text-align: left;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.cart-delivery-way {
+  display: flex;
+  width: 25%;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+}
+
+.cart-way-wrapper {
+  margin-right: 10px;
+}
+
+.merchandise {
+  margin-bottom: 10px;
+}

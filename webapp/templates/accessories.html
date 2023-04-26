@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="categorie">
+    <div class="categorie-inside">
+      <div class="categorie-column">
+        <div class="categorie-wrapper">
+          <ul class="categorie-menu">
+            <li class="categorie-chapter-name">Цепочки</li>
+          </ul>
+        </div>
+      </div>
+      <div class="categorie-column">
+        <div class="categorie-wrapper">
+          <ul class="categorie-menu">
+            <li class="categorie-chapter-name">Кольца</li>
+          </ul>
+        </div>
+      </div>
+      <div class="categorie-column">
+        <div class="categorie-wrapper">
+          <ul class="categorie-menu">
+            <li class="categorie-chapter-name">Браслеты</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<table>
+  <tr>
+    <td>
+      <div class="item">
+        <div class="product-img">
+          <img src="static/images/chain_02.jpg">
+        </div>
+        <div class = "product-description">
+          {% set name = 'Набор цепочек' %}
+          {% set price = '13000' %}
+          {% set img = 'chain_02.jpg' %}
+          <p>Набор цепочек</p>
+          <p>с подвесками из камней</p>
+          <p class = "price">₽ 13 000</p>
+        </div>
+        <div class = "product-button">
+          <form method='POST' action=''>
+            <p>{{ form.product_name(value=name) }}</p>
+            <p>{{ form.product_price(value=price) }}</p>
+            <p>{{ form.product_img(value=img) }}</p>
+            <p>{{ form.submit(class="button-to-cart") }}</p>
+          </form>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="item">
+        <div class="product-img">
+          <img src="static/images/chain_01.jpg">
+        </div>
+        <div class = "product-description">
+          {% set name = 'Браслет' %}
+          {% set price = '37000' %}
+          {% set img = 'chain_01.jpg' %}
+          <p>Браслет</p>
+          <p>золото 585</p>
+          <p class = "price">₽ 37 000</p>
+        </div>
+        <div class = "product-button">
+          <form method='POST' action=''>
+            <p>{{ form.product_name(value=name) }}</p>
+            <p>{{ form.product_price(value=price) }}</p>
+            <p>{{ form.product_img(value=img) }}</p>
+            <p>{{ form.submit(class="button-to-cart") }}</p>
+          </form>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="item">
+        <div class="product-img">
+          <img src="static/images/ring_02.jpg">
+        </div>
+        <div class = "product-description">
+          {% set name = 'Кольцо р-р 17' %}
+          {% set price = '4000' %}
+          {% set img = 'ring_02.jpg' %}
+          <p>Кольцо р-р 17</p>
+          <p>серебро</p>
+          <p class = "price">₽ 4 000</p>
+        </div>
+        <div class = "product-button">
+          <form method='POST' action=''>
+            <p>{{ form.product_name(value=name) }}</p>
+            <p>{{ form.product_price(value=price) }}</p>
+            <p>{{ form.product_img(value=img) }}</p>
+            <p>{{ form.submit(class="button-to-cart") }}</p>
+          </form>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="item">
+        <div class="product-img">
+          <img src="static/images/ring_01.jpg">
+        </div>
+        <div class = "product-description">
+          {% set name = 'Комплект колец' %}
+          {% set price = '50000' %}
+          {% set img = 'ring_01.jpg' %}
+          <p>Комплект колец</p>
+          <p>с бриллиантами</p>
+          <p class = "price">₽ 50 000</p>
+        </div>
+        <div class = "product-button">
+          <form method='POST' action=''>
+            <p>{{ form.product_name(value=name) }}</p>
+            <p>{{ form.product_price(value=price) }}</p>
+            <p>{{ form.product_img(value=img) }}</p>
+            <p>{{ form.submit(class="button-to-cart") }}</p>
+          </form>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="item">
+        <div class="product-img">
+          <img src="static/images/bracelet_01.jpg">
+        </div>
+        <div class = "product-description">
+          {% set name = 'Браслет массивный' %}
+          {% set price = '25000' %}
+          {% set img = 'bracelet_01.jpg' %}
+          <p>Браслет массивный</p>
+          <p>золото</p>
+          <p class = "price">₽ 25 000</p>
+        </div>
+        <div class = "product-button">
+          <form method='POST' action=''>
+            <p>{{ form.product_name(value=name) }}</p>
+            <p>{{ form.product_price(value=price) }}</p>
+            <p>{{ form.product_img(value=img) }}</p>
+            <p>{{ form.submit(class="button-to-cart") }}</p>
+          </form>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="item">
+        <div class="product-img">
+          <img src="static/images/ring_04.jpg">
+        </div>
+        <div class = "product-description">
+          {% set name = 'Набор из трех колец' %}
+          {% set price = '26000' %}
+          {% set img = 'ring_04.jpg' %}
+          <p>Набор из трех колец</p>
+          <p>золото</p>
+          <p class = "price">₽ 26 000</p>
+        </div>
+        <div class = "product-button">
+          <form method='POST' action=''>
+            <p>{{ form.product_name(value=name) }}</p>
+            <p>{{ form.product_price(value=price) }}</p>
+            <p>{{ form.product_img(value=img) }}</p>
+            <p>{{ form.submit(class="button-to-cart") }}</p>
+          </form>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="item">
+        <div class="product-img">
+          <img src="static/images/bracelet_02.jpg">
+        </div>
+        <div class = "product-description">
+          {% set name = 'Браслет-цепь' %}
+          {% set price = '15000' %}
+          {% set img = 'bracelet_02.jpg' %}
+          <p>Браслет-цепь</p>
+          <p>золото</p>
+          <p class = "price">₽ 15 000</p>
+        </div>
+        <div class = "product-button">
+          <form method='POST' action=''>
+            <p>{{ form.product_name(value=name) }}</p>
+            <p>{{ form.product_price(value=price) }}</p>
+            <p>{{ form.product_img(value=img) }}</p>
+            <p>{{ form.submit(class="button-to-cart") }}</p>
+          </form>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="item">
+        <div class="product-img">
+          <img src="static/images/chain_03.jpg">
+        </div>
+        <div class = "product-description">
+          {% set name = 'Набор цепей' %}
+          {% set price = '104500' %}
+          {% set img = 'chain_03.jpg' %}
+          <p>Набор цепей</p>
+          <p>золото</p>
+          <p class = "price">₽ 104 500</p>
+        </div>
+        <div class = "product-button">
+          <form method='POST' action=''>
+            <p>{{ form.product_name(value=name) }}</p>
+            <p>{{ form.product_price(value=price) }}</p>
+            <p>{{ form.product_img(value=img) }}</p>
+            <p>{{ form.submit(class="button-to-cart") }}</p>
+          </form>
+        </div>
+      </div>
+    </td>
+  </tr>  
+</table>
+
+<table>
+      {% if products %}
+        {% for elem in products %}
+          <tr>
+            <td>
+              <div class="item">
+                <div class="product-img">
+                </div>
+                <div class = "product-description">
+                  <p>{{ elem.name }}</p>
+                  <p>₽ {{ elem.price }}</p>
+                </div>
+                <div class = "product-button">
+                  {{ form.submit(class_ = "button-to-cart") }}
+                  <form method='POST' action=''>
+                    <p>{{ form.product_id(value=elem.id) }}</p>
+                  </form>
+                </div>
+              </div>
+            </td>
+          </tr>  
+        {% endfor %}
+      {% endif %}
+</table>
+{% endblock %}

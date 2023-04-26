@@ -1,0 +1,39 @@
+{%  extends "base.html"  %}
+
+{%  block content  %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  {% for message in messages %}
+    <p class="flash-message">{{ message }}</p>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+<div class="form-wrapper">
+  <div class="form">
+    <h1>Регистрация</h1>
+    <form method='POST' action="" class='login' novalidate>
+      <p class = "username">
+        {{ form.username.label }} <br>
+        {{ form.username(class_ = "password-username", size=20) }}
+      </p>
+      <p class = "email">
+        {{ form.email.label }} <br>
+        {{ form.email(class_ = "password-username", size=20) }}
+      </p>
+      <p class = "password">
+        {{ form.password.label }} <br>
+        {{ form.password(class_ = "password-field", size=20) }}
+      </p>
+      <p class = "check_password">
+        {{ form.check_password.label }} <br>
+        {{ form.check_password(class_ = "password-field", size=20) }}
+      </p>
+      <p class = "submit">
+          {{ form.submit(class_ = "submit-button") }}
+      </p>
+    </form>
+  </div>
+</div>
+
+
+{%  endblock  %}

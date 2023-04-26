@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="form-wrapper">
+  <div class="form">
+    <h1>Разместите товар</h1>
+    <form action="" method='POST' class='add_merchandise' novalidate>
+      {{ form.hidden_tag() }}
+      <p class = "">
+        {{ form.name_merchandise.label }} <br>
+        {{ form.name_merchandise() }}
+      </p>
+      <p>
+        {{ form.price_merchandise.label }} <br>
+        {{ form.price_merchandise() }}
+      </p>
+      <p class = "">
+        {{ form.category_merchandise.label }} <br>
+        {{ form.category_merchandise() }}
+      </p>
+      <p class = "">
+        {{ form.quantity_merchandise.label }} <br>
+        {{ form.quantity_merchandise() }}
+      </p>
+      <p class = "submit">
+        {{ form.submit(class_ = "submit-button") }}
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}

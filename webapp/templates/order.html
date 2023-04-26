@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-wrapper">
+  <div class="form">
+    <h1>Данные заказа</h1>
+    <form action="" method='POST' class='login' novalidate>
+      {{ form.hidden_tag() }}
+      <p class = "">
+        {{ form.username.label }} <br>
+        {{ form.username() }}
+      </p>
+      <p>
+        {{ form.date.label }} <br>
+        {{ form.date() }}
+      </p>
+      <p class = "">
+        {{ form.phone.label }} <br>
+        {{ form.phone() }}
+      </p>
+      <p class = "">
+        {{ form.address.label }} <br>
+        {{ form.address() }}
+      </p>
+      <p class = "">
+        {{ form.city.label }} <br>
+        {{ form.city() }}
+      </p>
+      <p class = "">
+        {{ form.street.label }} <br>
+        {{ form.street() }}
+      </p>
+      <p class = "">
+        {{ form.house.label }} <br>
+        {{ form.house() }}
+      </p>
+      <p class = "">
+        {{ form.appartement.label }} <br>
+        {{ form.appartement() }}
+      </p>
+      <p class = "submit">
+          {{ form.submit(class_ = "submit-button") }}
+      </p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+  <h1>
+    Дорогой(-ая) {{current_user.username}}!
+    Заказ успешно оформлен! 
+    Номер вашего заказа: {{ order.id }}.
+  </h1>
+</div>
+
+{% endblock %}

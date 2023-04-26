@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="cart-wrapper-main">
+  {% if product %}
+    {% for elem in product %}
+      <div class="product-in-cart">
+        
+        <div class="cart-column">
+          <div class="cart-column-product">
+            <form method='POST' action=''>
+              {{ form.product_id(value=elem.id) }}
+              {{ form.submit_del(class_="button-in-cart-list") }}         
+            </form>
+          </div>
+        </div>
+
+        <div class="cart-column">
+          <div class="cart-column-product">
+<!--             {% set img_name = 'static/images/'+elem.img %}
+          <img class="product-img-in-cart" src={{ img_name }}> -->
+          </div>
+        </div>
+
+        <div class="cart-column">
+          <div class="cart-column-product">
+            {{ elem.name }}
+          </div>
+        </div>
+
+        <div class="cart-column">
+          <div class="cart-column-product">
+            {{ elem.price }}
+          </div>
+        </div>
+        
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+<div class="cart-wrapper">
+  <div class="cart-price">
+    Общая стоимость
+  </div>
+  <div class="cart-price-total">
+    {{ sum_product }}
+  </div>
+</div>
+
+<div class="cart-wrapper">
+  <div class="cart-delivery">
+    <p>Доставка</p>
+  </div>
+  <div class="cart-delivery-way">
+    <input class="cart-way-wrapper" type="radio" name="cart-way" checked value="1">
+    <p>Курьер</p>
+  </div>
+  <div class="cart-delivery-way">
+    <input class="cart-way-wrapper" type="radio" name="cart-way" value="2">
+    <p>Самовывоз</p>
+  </div>
+</div>
+
+<div class="cart-wrapper">
+  <div class="cart-price">
+    <form action="" method='POST'>
+      {{ to_order.total_price(value=sum_product) }}
+      <p class = "submit">
+        {{ to_order.submit_to_order(class_ = "submit-button") }}
+      </p>
+    </form>
+  </div>
+</div>  
+
+{% endblock %}

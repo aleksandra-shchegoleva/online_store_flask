@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css"/>
+<!--     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Maven+Pro&family=Montserrat:wght@200;205&family=Nunito:wght@200;300&family=Rajdhani&family=Roboto+Serif:ital,wght@0,100;1,100&family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Montserrat:wght@200;205&family=Nunito:wght@200;300&family=Poiret+One&family=Rajdhani&family=Roboto+Serif:ital,wght@0,100;1,100&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Главная</title>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inside">
+      <div class="header-column-logo">
+        <div class="header-wrapper">
+          <ul class="header-menu">
+            <li class="header-icon-logo"><a href="{{ url_for('start') }}"><img class="icon-logo" src="static/images/OnlyOnce-logo-001.svg"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="header-wrapper">
+          <ul class="header-menu">
+            <li class="header-chapter-name"><a href="/clothes">Одежда</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="header-wrapper">
+          <ul class="header-menu">
+            <li class="header-chapter-name"><a href="{{ url_for('shoes') }}">Обувь</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="header-wrapper">
+          <ul class="header-menu">
+            <li class="header-chapter-name"><a href="{{ url_for('bags') }}">Сумки</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column">
+        <div class="header-wrapper">
+          <ul class="header-menu">
+            <li class="header-chapter-name"><a href="{{ url_for('accessories') }}">Украшения</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column-cart">
+        <div class="header-wrapper">
+          <ul class="header-menu">
+            <li class="header-chapter-name"><a href="{{ url_for('cart') }}"><img class="icon-menu" src="static/images/icons8_buy.png"></a>
+            <p>{{ Cart.query.count() }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-column-enter">
+        <div class="header-wrapper">
+          <ul class="header-menu">
+            {% if current_user.is_authenticated %}
+            <li class="header-login">Привет, {{ current_user.username }}</li>
+            <li class="header-login"><a href="{{ url_for('logout') }}">Выйти</a></li>
+            {% else %}
+            <li class="header-login"><a href="{{ url_for('login') }}"><img class="icon-menu" src="static/images/icons8_enter.png"></a><a href="{{ url_for('login') }}">Вход</a></li>
+            <li class="header-login"><a href="{{ url_for('registration') }}"><img class="icon-menu" src="static/images/icons8_01.png"></a><a href="{{ url_for('registration') }}">Регистрация</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  {% block content %}
+  {% endblock %}
+  <div class="line"></div>
+  <div class="footer">
+    <div class="footer-inside">
+      <div class="footer-column">
+        <div class="footer-wrapper">
+          <ul class="footer-menu">
+            <li class="chapter-name"><a href="{{ url_for('customers') }}">Покупателям</a></li>
+            <li>Заказы и оплата</li>
+            <li>Доставка</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="footer-wrapper">
+          <ul class="footer-menu">
+            <li class="chapter-name"><a href="{{ url_for('partners') }}">Партнерам</a></li>
+            <li>Станьте продавцом</li>
+            <li>Сообщить о нарушении<br>авторских прав</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="footer-wrapper">
+          <ul class="footer-menu">
+            <li class="chapter-name"><a href="{{ url_for('company') }}">О компании</a></li>
+            <li>Пресс-центр</li>
+            <li>Вакансии</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="footer-wrapper">
+          <ul class="footer-menu">
+            <li class="chapter-name">Мы в соцсетях</li>
+            <li><a href="https://vk.com/onlyonce_shop" }}">ВКонтакте</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
