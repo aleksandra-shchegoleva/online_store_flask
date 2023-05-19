@@ -5,7 +5,7 @@
 <div class="form-wrapper">
   <div class="form">
     <h1>Разместите товар</h1>
-    <form action="" method='POST' class='add_merchandise' novalidate>
+    <form action="" method='POST' class='add_merchandise' enctype="multipart/form-data" novalidate>
       {{ form.hidden_tag() }}
       <p class = "">
         {{ form.name_merchandise.label }} <br>
@@ -22,6 +22,9 @@
       <p class = "">
         {{ form.quantity_merchandise.label }} <br>
         {{ form.quantity_merchandise() }}
+      </p>
+      <p>
+        {{ form.file() }}
       </p>
       <p class = "submit">
         {{ form.submit(class_ = "submit-button") }}

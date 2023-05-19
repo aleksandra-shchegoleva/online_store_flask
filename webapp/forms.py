@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, HiddenField, ValidationError, SelectField, IntegerField
 from wtforms.validators import DataRequired
 from wtforms.fields import DateField, TelField
+from flask_wtf.file import FileField
 import re
 
 class Login(FlaskForm):
@@ -59,4 +60,5 @@ class Add_merchandise(FlaskForm):
                                     (3, 'Аксессуары'),
   ])
   quantity_merchandise = IntegerField('Количество товара на складе', validators=[DataRequired()])
+  file = FileField()
   submit = SubmitField('Разместить', render_kw = {"class": "submit-button"})

@@ -8,6 +8,8 @@ from flask_login import login_user, login_required, logout_user, current_user
 from sqlalchemy.sql import func
 import re
 from sqlalchemy.sql.expression import join, select
+from werkzeug.utils import secure_filename
+import os
 
 @app.before_first_request
 def create_tables():
@@ -22,8 +24,8 @@ def start():
   
   return render_template('start.html', Cart=Cart)
 
-@app.route("/clothes", methods=['GET', 'POST'])
-def clothes():
+@app.route("/products", methods=['GET', 'POST'])
+def products():
   form = AddProduct()
   products = Product.query.filter(Product.category == "0")
   if request.method == 'POST':
@@ -33,10 +35,10 @@ def clothes():
     db.session.add(product)
     db.session.commit()
     print("Добавление успешно")
-    redirect(url_for('clothes'))
+    redirect(url_for('products'))
 
   # count = Product.query.count()
-  return render_template('clothes.html', form=form, Cart=Cart, products=products)
+  return render_template('products.html', form=form, Cart=Cart, products=products)
 
 
 @app.route("/shoes", methods=['GET', 'POST'])
@@ -110,22 +112,22 @@ def company():
 def cart():
   form = DeleteProduct()
   order_form = Cart_form()
-  j = join(Product_Cart, Product,
-          Product_Cart.c.product_id == Product.c.id)
+  # j = join(Product_Cart, Product,
+  #         Product_Cart.c.product_id == Product.c.id)
   sel = select([Product_Cart]).select_from(j).where(Product_Cart.cart_id == current_user.id)
-  # product = Product_Cart.query.filter_by(user_id = current_user.id)
-  # if request.method == 'POST':
-    # if order_form.submit_to_order.data:
-    #   return redirect(url_for('order'))
-    # if form.submit_del.data:
-    #   product_id = int(request.form.get('product_id'))
-    #   delete_product = session.query(Cart).filter(Cart.id==current_user.id).all()
-    #   db.session.delete(delete_product)
-    #   db.session.commit()
-    #   return redirect(url_for('cart'))
-  # product = Product.query.all()
+  product = Product_Cart.query.filter_by(user_id = current_user.id)
+  if request.method == 'POST':
+    if order_form.submit_to_order.data:
+      return redirect(url_for('order'))
+    if form.submit_del.data:
+      product_id = int(request.form.get('product_id'))
+      delete_product = session.query(Cart).filter(Cart.id==current_user.id).all()
+      db.session.delete(delete_product)
+      db.session.commit()
+      return redirect(url_for('cart'))
+  product = Product.query.all()
   sum_product = db.session.query(func.sum(Product.price)).scalar()
-  return render_template('cart.html', form=form, sum_product=sum_product, Cart=sel, to_order=order_form)
+  return render_template('cart.html', form=form, sum_product=sum_product, Cart=sel, to_order=order_form, product=product)
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -216,7 +218,45 @@ def add_merchandise():
     price_merchandise = form.price_merchandise.data
     category_merchandise = form.category_merchandise.data
     quantity_merchandise = form.quantity_merchandise.data
-    add_merchandise = Product(name_merchandise, price_merchandise, category_merchandise, quantity_merchandise)
+    file = form.file.data
+    filename = secure_filename(file.filename)
+    path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    file.save(path)
+    add_merchandise = Product(name_merchandise, price_merchandise, category_merchandise,
+                              quantity_merchandise, img=filename)
     db.session.add(add_merchandise)
     db.session.commit()
   return render_template('add_merchandise.html', Cart=Cart, form=form)
+
+@app.route('/product/<int:product_id>', methods=['GET', 'POST'])
+def show_product(product_id):
+  product = Product.query.filter(Product.id == product_id).first()
+  return render_template('product.html', Cart=Cart, product=product)
+
+@app.route('/product/<int:product_id>/edit', methods=['GET', 'POST'])
+def edit_product(product_id):
+  form = Add_merchandise()
+  product = db.session.query(Product).get(product_id)
+
+  if request.method == 'POST':
+    name_merchandise = form.name_merchandise.data
+    price_merchandise = form.price_merchandise.data
+    category_merchandise = form.category_merchandise.data
+    quantity_merchandise = form.quantity_merchandise.data
+
+    product.name = name_merchandise
+    product.price = price_merchandise
+    product.category = category_merchandise
+    product.quantity = quantity_merchandise
+    db.session.merge(product)
+    db.session.commit()
+    return redirect(url_for('products'))
+
+  return render_template('edit_product.html', product=product, form=form, Cart=Cart)
+
+@app.post("/product/<int:product_id>/delete")
+def delete_product(product_id):
+  product = Product.query.get(product_id)
+  db.session.delete(product)
+  db.session.commit()
+  return redirect(url_for('products'))

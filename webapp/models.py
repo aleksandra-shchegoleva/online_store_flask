@@ -28,15 +28,15 @@ class Product(db.Model):
   price = db.Column(db.Integer)
   category = db.Column(db.String(30))
   quantity = db.Column(db.Integer)
-  # img = db.Column(db.String(50))
+  img = db.Column(db.Text)
   carts = relationship("Cart", secondary=Product_Cart, back_populates='products')
 
-  def __init__(self, name, price, category, quantity):
+  def __init__(self, name, price, category, quantity, img):
     self.name = name
     self.price = price
     self.category = category
     self.quantity = quantity
-    # self.img = img
+    self.img = img
 
 class Order(db.Model):
   id = db.Column(db.Integer, primary_key=True)

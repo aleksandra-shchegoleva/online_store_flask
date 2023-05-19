@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="categorie">
+    <div class="categorie-inside">
+      <div class="categorie-column">
+        <div class="categorie-wrapper">
+          <ul class="categorie-menu">
+            <li class="categorie-chapter-name">Верх</li>
+          </ul>
+        </div>
+      </div>
+      <div class="categorie-column">
+        <div class="categorie-wrapper">
+          <ul class="categorie-menu">
+            <li class="categorie-chapter-name">Низ</li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<table>
+      {% if products %}
+        {% for elem in products %}
+          <tr>
+            <td>
+              <div class="item">
+                <div class="product-img">
+                  <img src={{"static/images/" + elem.img }}>
+                </div>
+                <div class = "product-description">
+                  {% set id = elem.id | string() %}
+                  <a href="{{ url_for('show_product', product_id=elem.id) }}">{{ elem.name }}</a>
+                  <p>₽ {{ elem.price }}</p>
+                </div>
+                <div class = "product-button">
+                  {{ form.submit(class_ = "button-to-cart") }}
+                  <form method='POST' action=''>
+                    <p>{{ form.product_id(value=elem.id) }}</p>
+                  </form>
+                </div>
+              </div>
+            </td>
+          </tr>  
+        {% endfor %}
+      {% endif %}
+</table>
+
+{% endblock %}
